@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/signup.css" />
+
+    <title>Registration Page</title>
+  </head>
+  <body>
+    <div class="nav-container">
+      <div class="title-card">
+        <p>ABC Tailors</p>
+      </div>
+      <div class="navbar">
+        <ul>
+          <li><a href="/static/home.html">Home</a></li>
+          <li><a href="/static/about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <!-- <div class="nav-border"></div> -->
+    <div class="form-layout">
+      <form action="/signup" method="post">
+        <div class="heading">
+          <h3>SIGN UP</h3>
+        </div>
+        <span id="error"></span>
+        <div class="form-field">
+          <label for="name">Name</label><br />
+          <input type="text" name="name" id="name" required /><br />
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone</label><br />
+          <input
+            type="text"
+            maxlength="10"
+            name="phone"
+            id="phone"
+            required
+          /><br />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label><br />
+          <input type="email" name="email" id="email" required /><br />
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label><br />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            maxlength="16"
+            required
+          /><br />
+        </div>
+        <div class="form-field">
+          <label for="confirmpassword">Confirm Password</label><br />
+          <input
+            type="password"
+            name="cpass"
+            id="cpass"
+            maxlength="16"
+            required
+          /><br />
+        </div>
+        <div class="reg-btn">
+          <input type="submit" value="REGISTER" onclick="success()" />
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+      function success() {
+        $("form").submit(function (event) {
+          const formData = {
+            name: $("#name").val(),
+            model: $("#phone").val(),
+            fault: $("#email").val(),
+            email: $("#password").val(),
+          };
+          $.ajax({
+            type: "POST",
+            url: "/SignUp",
+            data: formData,
+            dataType: "json",
+            encode: true,
+          }).done(function (data1) {
+            if (data1 == "Registered Successfully") {
+              $("#error").text(data1);
+            }
+
+            if (data1 == "Customer Already Exist") {
+              $("#error").text(data1);
+            }
+          });
+          event.preventDefault();
+        });
+      }
+    </script>
+  </body>
+</html>

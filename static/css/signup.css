@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&family=Roboto+Slab&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: -webkit-linear-gradient(#ff4c92,purple);
+    
+}
+.title-card{
+ text-align: center;
+ font-family: 'Playfair Display',serif;
+ font-size: 3rem;
+ color: #ddd;
+}
+.navbar > ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    /* float: right; */
+    position: relative;
+    right:20px;
+    /* margin: 0 5px; */
+}
+.navbar li,a,a:visited{
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin: 10px 10px;
+    font-family: 'Roboto Slab', serif;
+    color: #ccc;
+}
+hr{
+    width: 80%;
+    margin:0 auto;
+}
+.form-layout{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 25px;
+    /* background-color: antiquewhite; */
+}
+.form-layout form{
+    border-radius: 10px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 1rem;
+    width: 350px;
+}
+.heading{
+    font-size: 1.2rem;
+    color: gray;
+}
+.form-field{
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+    /* background-color: aliceblue; */
+}
+.form-field input{
+    font-size: 1.2rem;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid silver;
+    border-radius: 5px;
+    outline: none;
+}
+.reg-btn input{
+    text-align: center;
+    padding: 7px;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    border: none;
+    background-color: deeppink;
+    /* background: -webkit-linear-gradient(#ff4c92,purple); */
+    border-radius: 5px;
+}
