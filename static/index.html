@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <title>Profile Page</title>
+</head>
+<body>
+    <header class="bg">
+        <h1>ABC Garments</h1>
+        <nav>
+          <ul>
+            <li><a href="lhome.html">Home</a></li>
+            <li><a href="index.html">Profile</a></li>
+            <li>
+              <a href="home.html"><button>Log out</button></a>
+            </li>
+          </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="prof-page">
+            <div class="prof-view" style="display: none;">
+                <div class="prof-top">
+                    <div class="prof-view-head">
+                        <h2>Your Profile</h2>
+                    </div>
+                    <div class="prof-edit">
+                        <button type="button">Edit Profile</button>
+                    </div>
+                </div>
+                <div class="prof-content">
+                    <div class="prof-fields">
+                        <img src="/static/images/tailor.jpeg" alt="">
+                    </div>
+                    <div class="prof-fields">
+                        <label>Name</label>
+                        <p>Ajay</p>
+                        <hr>
+                    </div>
+                    <div class="prof-fields">
+                        <label>Phone</label>
+                        <p>9361410824</p>
+                        <hr>
+                    </div>
+                    <div class="prof-fields">
+                        <label for="">Email</label>
+                        <p></p>
+                        <hr>
+                    </div>
+                     <div class="prof-view-btn">
+                        <button>Change Password</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prof-edit-page" style="display: none;">
+                <div class="prof-edit-head">
+                    <h2>Edit Profile</h2>
+                </div>
+                <div class="prof-edit-form">
+                    <form action="">
+
+                        <div class="edit-form-fields">
+                            <label>Upload Your Photo</label>
+                            <input type="file" name="" value="">
+                        </div>
+                        <div class="edit-form-fields">
+                            <label>Name</label>
+                            <input type="text" name="" value="">
+                        </div>
+                        <div class="edit-form-fields">
+                            <label>Phone</label>
+                            <input type="number" maxlength="10" name="" value="">
+                        </div>
+                        <div class="edit-form-fields">
+                            <label>Email</label>
+                            <input type="email" name="" value="">
+                        </div>
+                        <div class="edit-form-btn">
+                            <button type="button">Cancel</button>
+                            <button type="submit">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="change-pass" style="display: none;">
+                <div class="change-pass-head">
+                    <h2>Change Your Password</h2>
+                </div>
+                <div class="change-pass-form">
+                    <div class="pass-form-fields">
+                        <label>Enter you old password</label>
+                        <input type="password" name="" id="">
+                    </div>
+                    <div class="pass-form-fields">
+                        <label for="">Enter your new password</label>
+                        <input type="password" name="" id="">
+                    </div>
+                    <div class="pass-form-fields">
+                        <label for="">Re-enter your new password</label>
+                        <input type="password" name="" id="">
+                    </div>
+                    <div class="pass-form-btn">
+                        <button type="button">Cancel</button>
+                        <button type="submit">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

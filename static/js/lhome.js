@@ -13,19 +13,26 @@ document.querySelector(".trashButn").addEventListener("click", function () {
   content.style.display = "flex";
 });
 
-const bookord = document.getElementById("bookord");
-const book = document.querySelector(".book");
-bookord.addEventListener("click", function () {
-  book.style.display = "flex";
+const grpord = document.getElementById("groupord");
+const grpform = document.querySelector(".grp-order");
+grpord.addEventListener("click", function () {
+  grpform.style.display = "flex";
   content.style.display = "none";
 });
-
-document.querySelector(".cancel-btn").addEventListener("click", function () {
-  book.style.display = "none";
+document.querySelector(".grp-cancel").addEventListener("click", function () {
+  grpform.style.display = "none";
   content.style.display = "flex";
 });
 
-const uuid = () => document.getElementsByName("uid")[0].value;
+// const prd_btn = document.querySelector(".product-btn");
+// const product = document.querySelector(".products");
+// prd_btn.addEventListener("click", function () {
+//   product.style.display = "flex";
+//   content.style.display = "none";
+// });
+
+
+// const uuid = () => document.getElementsByName("uid")[0].value;
 
 /*
 <table>
@@ -49,20 +56,16 @@ const uuid = () => document.getElementsByName("uid")[0].value;
 function showOrders(data) {
   const table = document.querySelector(".text > table");
 
-  // table.innerHTML = " "
+  table.innerHTML = " ";
 
   const heading = document.createElement("tr");
-    [
-      "Material",
-      "Model Image",
-      "Color",
-      "Size",
-      "Requested Time"
-    ].forEach((title) => {
+  ["Material", "Model Image", "Color", "Size", "Requested Time"].forEach(
+    (title) => {
       const th = document.createElement("th");
       th.append(title);
       heading.append(th);
-    });
+    }
+  );
   table.append(heading);
 
   for (let i = 0; i < data.length; i++) {
@@ -75,13 +78,13 @@ function showOrders(data) {
     const td5 = document.createElement("td");
 
     td1.append(data[i][0]);
-    const atag = document.createElement("a")
-    atag.append("view/image")
-    atag.setAttribute("href",data[i][4])
-    atag.setAttribute("target","_blank")
-    atag.style.backgroundColor = "orange"
-    atag.style.padding = "5px"
-    atag.style.borderRadius = ".3rem"
+    const atag = document.createElement("a");
+    atag.append("view/image");
+    atag.setAttribute("href", data[i][4]);
+    atag.setAttribute("target", "_blank");
+    atag.style.backgroundColor = "orange";
+    atag.style.padding = "5px";
+    atag.style.borderRadius = ".3rem";
     td2.append(atag);
     td3.append(data[i][1]);
     td4.append(data[i][2]);
@@ -97,12 +100,56 @@ function showOrders(data) {
 }
 
 async function getOrders() {
-  // try {
-  const req = await fetch(`/getorders?uid=${uuid()}`);
+  try {
+  const req = await fetch(`/getorders`);
   const data = await req.json();
   showOrders(data);
   console.log(data);
-  // } catch (error) {
-  // console.log(error);
-  // }
+  } catch (error) {
+  console.log(error);
+  }
 }
+
+const tbok_btn = document.querySelector(".tableok-btn");
+const formtable = document.querySelector(".grpformtable");
+document.getElementById("count").addEventListener("input", function () {
+  formtable.style.display = "block";
+  const count = parseInt(document.getElementById("count").value);
+  const table = document.querySelector(".grpformtable > table");
+  table.innerHTML = " ";
+
+  const opt = ["s", "m", "l", "xs", "xl", "xxl", "xxxl"];
+  for (let i = 0; i < count; i++) {
+    const row = document.createElement("tr");
+    if (i === 0) {
+      const heading = document.createElement("tr");
+      ["Customer Name", "Size"].forEach((title) => {
+        const th = document.createElement("th");
+        th.append(title);
+        heading.append(th);
+      });
+      table.append(heading);
+    }
+    const nameCell = document.createElement("td");
+    const nameInput = document.createElement("input");
+    nameInput.setAttribute("name","userList")
+    nameInput.type = "text";
+    nameCell.appendChild(nameInput);
+
+    const sizeCell = document.createElement("td");
+    const sizeSelect = document.createElement("select");
+    sizeSelect.setAttribute("name","userSize")
+    for (let j = 0; j < 7; j++) {
+      const option = document.createElement("option");
+      option.value = opt[j];
+      option.text = opt[j];
+      sizeSelect.appendChild(option);
+    }
+    sizeCell.appendChild(sizeSelect);
+
+    row.appendChild(nameCell);
+    row.appendChild(sizeCell);
+
+    table.appendChild(row);
+  }
+});

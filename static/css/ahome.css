@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ body{
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-image: -webkit-linear-gradient(#ff4c92, purple);  
+   overflow: hidden;
+ }
+ .heading{
+    text-align: center;
+    height: 3rem;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'poppins', sans-serif;
+    font-size: 1.5rem;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+ }
+ .nav-bar ul{
+    display: flex;
+    justify-content: flex-end;
+    /* margin: 0.5rem; */
+    list-style: none;
+ }
+ .nav-bar li{
+    margin: 0.85rem;
+ }
+ .nav-bar li > a,li > a:visited{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+ }
+ .ahome{
+    display: grid;
+    grid-template-columns: 15% 80%;
+    gap: 1.5rem;
+    width: 98%;
+    height: 29rem;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 1.2rem;
+ }
+.dashboard{
+    background-color: rgb(254, 255, 255);
+    height: 10.2rem;
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+}
+
+.dashboard > p{
+   text-align: center;
+   margin: 0.55rem;
+}
+.profile,.order,.customer,.material{
+   cursor: pointer;
+}
+.content{
+    background-color: rgb(249, 249, 249);
+    height: 100%;
+    border-radius: 0.5rem;
+}
+.profile-page{
+   height: 100%;
+   width: 100%;
+}
+.prof-view{
+   height: 100%;
+   width: 100%;
+}
+.prof-top{
+   display: flex;
+   justify-content: flex-start;
+   height: 10%;
+   gap: 80%;
+   margin: 1rem 2rem;
+}
+.prof-edit-btn > button{
+   border: none;
+   border-radius: 1rem;
+   padding: 0.5rem;
+   background-color:#ff4c92;
+   color: #ffffff;
+   cursor: pointer;
+}
+.view-prof{
+   display: flex;
+   flex-direction: row;
+   height: 80%;
+   width: 100%;
+   gap: 2rem;
+   /* background-color: #ff4c92; */
+   justify-content: center;
+}
+.prof-pic {
+   /* background-color:aqua; */
+   width: 35%;
+   display: flex;
+   flex-direction: column;
+   /* margin-right: 10px; */
+}
+.prof-pic > img{
+   width: 8.5rem;
+   height: 8.5rem;
+   margin: 0 auto;
+   margin-top: 3rem;
+   border-radius: 4rem;
+   /* text-align: center; */
+   
+}
+.prof-created-on{
+   text-align: center;
+   margin: 1rem;
+}
+.prof-content{
+
+   width:40%;
+   display: flex;
+   flex-direction: column;
+   /* background-color: aquamarine; */
+}
+.prof-fields{
+   margin: 0.5rem;
+}
+.prof-fields > label{
+   width: 50%;
+   padding: 0;
+}
+.prof-fields > p{
+   width: 50%;
+   margin: 0.3rem;
+   margin-bottom: 2px;
+   /* padding: 0; */
+}
+.prof-fields > hr{
+   width: 75%;
+   height: 2px;
+   background-color: #ff4c92;
+}
+.change-pass > button{
+   justify-content: flex-end;
+   border: none;
+   border-radius: 1rem;
+   background-color: rgba(38, 38, 255, 0.787);
+   padding: 0.3rem;
+   color:#ffffff;
+   cursor: pointer;
+}
+.prof-create{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+.prof-create-head{
+   font-size: 1.5rem;
+   margin: 1rem;
+}
+.prof-create-form{
+   /* background-color: aquamarine; */
+   margin-top: 0.5rem;
+}
+.prof-create-form > form{
+   display: flex;
+   flex-direction: column;
+   width: 35%;
+   /* justify-content: center; */
+   /* margin:1rem; */
+   margin: 0 auto;
+   /* background-color: aqua; */
+   /* text-align: center; */
+}
+.prof-create-fields{
+   display: flex;
+   flex-direction: column;
+   /* margin: 10px; */
+   width: 100%;
+   /* font-size: 1rem; */
+   /* justify-content: center; */
+   margin: 0 auto;
+}
+.prof-create-fields > label{
+   padding: 5px;
+   font-size: 1.2rem;
+}
+.prof-create-fields > input{
+   padding: 2px;
+   font-size: 1rem;
+   border: none;
+   border-bottom: 2px solid #ff4c92;
+   outline: none;
+}
+.prof-create-fields > input[type="file"]{
+   border: none;
+}
+.prof-create-btn{
+   display: flex;
+   margin: 0.5rem;
+   gap: 0.5rem;
+   justify-content: flex-end;
+}
+.prof-create-btn > button{
+   cursor: pointer;
+   font-size: 1rem;
+   border: none;
+   border-radius: 5px;
+   background-color: rgba(38, 38, 255, 0.787);
+   padding: 3px;
+   color: #ffffff;
+}
+.change-pass-page{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+}
+.change-pass-head{
+   text-align: center;
+   font-size: 1.5rem;
+   margin: 0.5rem;
+   margin-bottom: 4rem;
+}
+.change-pass-field{
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+}
+.change-pass-btn{
+   margin: 0 auto;
+}
+.change-pass-field > label{
+   font-size: 1.2rem;
+   margin: 0.5rem;
+}
+.change-pass-field > input{
+   padding: 3px;
+   font-size: 1rem;
+   border-radius: 2px;
+   border: none;
+   outline: none;
+   border-bottom: 2px solid #ff4c92;
+
+}
+.change-pass-btn > button{
+   cursor: pointer;
+   margin: 10px 3px;
+   font-size: 1rem;
+   background-color: rgba(48, 48, 252, 0.787);
+   border: none;
+   border-radius: 0.5rem;
+   padding: 5px;
+   color: #ffffff;
+}
+.customer-page{
+   height: 100%;
+   width: 100%;
+   /* background-color: aqua; */
+   display: flex;
+   flex-direction: column;
+   /* margin: 0 auto; */
+}
+.customer-head h2{
+   font-size: 2rem;
+   text-align: center;
+   padding: 1rem;
+}
+.customer-table{
+   width: 100%;
+   height: 80%;
+   /* background-color: aquamarine; */
+}
+.material-page{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+}
+.material-head{
+   text-align: center;
+   margin: 1rem;
+}
+.material-form{
+   /* background-color: aqua; */
+   margin: 0 auto;
+   margin-top: 1.5rem;
+   display: flex;
+   flex-direction: column;
+}
+.mat-form-fields{
+   display: flex;
+   flex-direction: column;
+}
+.mat-form-fields > label{
+   margin: 10px;
+   font-size: 1.2rem;
+}
+.mat-form-fields > input{
+   padding: 2px;
+   font-size: 1rem;
+   margin: 0;
+}
+.mat-form-btn{
+   display: flex;
+   gap: 0.5rem;
+   margin-top: 1rem;
+   justify-content: center;
+}
+.mat-form-btn > button{
+   cursor: pointer;
+   background-color: rgb(29, 29, 248);
+   color: #ffffff;
+   border: none;
+   border-radius: 3px;
+   padding: 5px 10px;
+   font-size: 1rem;
+}
+h2,h4{
+   color: gray;
+}
+

@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: -webkit-linear-gradient(#ff4c92, purple);  
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 20vh;
+  }
+  /* .bg{
+      
+      /* background-color: aqua; 
+      background: rgba(0,0,0,0.7)url('tailor1.avif');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: darken;
+   */
+  .bg h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 3.5rem;
+    /* height:100%; */
+    position: relative;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black ;
+    /* text-shadow: 1rem; */
+    /* background-color: rgb(85, 232, 246); */
+    /* background-image: -webkit-linear-gradient(rgb(255, 0, 217), aliceblue); */
+  }
+  nav a {
+    text-decoration: none;
+  }
+  nav {
+    /* border-bottom: 5px double black; */
+    height: 50%;
+    
+  }
+  nav ul {
+    display: flex;
+    float: right;
+  }
+  nav li,
+  a {
+    color: aliceblue;
+    list-style: none;
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+      sans-serif;
+    cursor: pointer;
+  }
+  nav button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    color: aliceblue;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+      sans-serif;
+    cursor: pointer;
+  }
+.prof-page{
+    width: 35%;
+    height: 25rem;
+    background-color: rgb(250, 251, 251);
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+}
+.prof-top{
+    display: flex;
+    justify-content: space-between;
+    
+    /* width: 100%; */
+}
+.prof-view-head{
+    margin: 1rem;
+}
+.prof-edit{
+    margin:1rem;
+}
+.prof-edit > button{
+    padding: 5px;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4c92;
+    color: #ffffff;
+}
+.prof-content{
+    width: 50%;
+    margin: 0 auto;
+}
+.prof-fields > img{
+    width: 6rem;
+    height: 6rem;
+    border: 1px solid #727171;
+    border-radius: 3rem;
+    margin: 0 30% 0 30%;
+}
+.prof-fields{
+    display: flex;
+    flex-direction: column;
+}
+.prof-fields > label{
+    margin: 0.5rem;
+    font-size: 1.2rem;
+}
+.prof-fields > p{
+    padding-bottom: 2px;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+.prof-fields > hr{
+    height: 2px;
+    background-color: #ff4c92;
+    margin-left: 0.5rem;
+}
+.prof-view-btn{
+    margin-top: 0.85rem;
+    text-align: end;
+}
+.prof-view-btn > button{
+    font-size: 1rem;
+    background-color: rgb(49, 49, 246);
+    border: none;
+    border-radius: 5px; 
+    padding: 5px;
+    color: #ffffff;  
+}
+.prof-edit-page{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.prof-edit-head {
+    margin: 0.5rem;
+}
+.prof-edit-form{
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+.edit-form-fields{
+    display: flex;
+    flex-direction: column;
+}
+.edit-form-fields > label{
+    margin: 0.5rem;
+    font-size: 1.2rem;   
+}
+.edit-form-fields input[type="file"]{
+    border: none;
+}
+.edit-form-fields input{
+    font-size: 0.85rem;
+    width: 95%;
+    padding: 3px;
+    margin-left: 0.5rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ff4c92;
+}
+.edit-form-btn{
+    display: flex;
+    margin-top: 0.85rem;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+.edit-form-btn > button{
+    background-color: #ff4c92;
+    color: #ffffff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+.change-pass{
+    display: flex;
+    flex-direction: column;
+    
+}
+.change-pass-head{
+    margin: 0.5rem;
+    text-align: center;
+}
+.change-pass-form{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.pass-form-fields{
+    display: flex;
+    flex-direction: column;
+}
+.pass-form-fields > label{
+    margin: 0.5rem;
+    font-size: 1.2rem;
+}
+.pass-form-fields > input{
+    padding: 3px;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #ff4c92;
+    outline: none;
+}
+
+.pass-form-btn{
+    display: flex;
+    margin: 1rem;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.pass-form-btn > button{
+    padding: 5px;
+    font-size: 1rem;
+    background-color: #ff4c92;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+

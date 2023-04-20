@@ -9,11 +9,11 @@
   </head>
   <body>
     <header class="bg">
-      <h1>ABC Tailors</h1>
+      <h1>ABC Garments</h1>
       <nav>
         <ul>
-          <li><a href="home.html">Home</a></li>
-          <li>Profile</li>
+          <li><a href="lhome.html">Home</a></li>
+          <li><a href="index.html">Profile</a></li>
           <li>
             <a href="home.html"><button>Log out</button></a>
           </li>
@@ -21,116 +21,224 @@
       </nav>
     </header>
     <main>
-      <div class="content">
-        <div id="myorder" class="orders">
-          <h1>My Orders</h1>
-          <p>
-            <em>You can see your order details and history of your orders</em>
-          </p>
+      <div class="cards">
+        <!-- cards div -->
+        <div class="content">
+          <!-- my order div -->
+          <div id="myorder" class="orders">
+            <h2>My Orders</h2>
+            <p>
+              <em>You can see your order details and history of your orders</em>
+            </p>
+          </div>
+          <!-- End of my order div -->
+          <!-- book order div -->
+          <!-- <div id="bookord" class="orders">
+            <h2>Book Orders (Individual)</h2>
+            <p>
+              <em>You can book your orders here in your preferences</em>
+            </p>
+          </div> -->
+          <!-- End of book order div -->
+          <!-- group orders div -->
+          <div id="groupord" class="orders">
+            <h2>Bulk Orders</h2>
+            <p>
+              <em>You can book your orders here in huge amount</em>
+            </p>
+          </div>
+          <!-- End of group orders div -->
         </div>
-        <div id="bookord" class="orders">
-          <h1>Book Orders</h1>
-          <p>
-            <em
-              >You can book your orders here in your preferences and get
-              satisfied with our work</em
-            >
-          </p>
-        </div>
-      </div>
-      <div class="master" style="display: none">
-        <div>
-          <button class="trashButn">X</button>
-        </div>
-        <div class="ord-head">Your Orders</div>
-        <div class="text">
-          <table>
-            <!-- <tr>
-              <th>Material</th>
-              <th>Model Image</th>
-              <th>Color</th>
-              <th>Size</th>
-              <th>Requested Time</th>
-            </tr> -->
-            <!--
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="#">FeedbackForm</a></td>
-              <td><button type="submit" id="edit-btn">Edit</button>
-              <button type="submit" id="del-btn">Delete</button>
-            </td>
-            </tr> -->
-          </table>
-        </div>
-      </div>
-      <div class="book" style="display: none">
-        <div>
-          <button class="cancel-btn">x</button>
-        </div>
-        <div class="book-head"><p>Book your Order</p></div>
-        <div class="form-layout">
-          <form action="/book" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="uid" value="{{uid}}" />
-            <!--
-            <span class="group-input"> 
-              <label>Gender</label>
-              <input type="radio" name="gender" class="gender" value="Male" />
-              <input type="radio" name="gender" class="gender" value="Female" />
-            </span>
-            <label>Dress Type</label><br />
-            <input type="text" id="dtype" name="dtype" /><br /> -->
-            <label>Material</label><br />
-            <input type="text" id="material" name="material" /><br />
-            <label>Model Image</label><br />
-            <input type="file" id="mimg" name="mimg" multiple /><br />
-            <label>Color</label><br />
-            <input type="color" id="color" name="color" /><br />
-            <label>Size</label><br />
-            <select name="size" id="size">
-              <option value="xs">XS</option>
-              <option value="s">small</option>
-              <option value="m">medium</option>
-              <option value="l">large</option>
-              <option value="xl">XL</option>
-              <option value="xxl">XXL</option>
-              <option value="xxxl">XXXL</option></select
-            ><br />
-            <label>Expected Date</label><br />
-            <input type="date" id="date" name="date" />
-            <div class="book-btns">
-              <button id="booking-btn" class="book-btn" type="submit">
-                BOOK
-              </button>
-              <button id="clear-btn" class="book-btn" type="reset">
-                CLEAR
-              </button>
+        <!-- End of content div -->
+        <div class="products" style="display: none">
+          <div class="designs">
+            <div class="Men">
+              <h2></h2>
+              <div class="images">
+                <a href="/static/#" class="container">
+                  <img src="/static/images/coat.jpg" alt="coat" />
+                  <div class="text">
+                    <h2>Suit</h2>
+                    <span>$140</span><br />
+                    <span>4.5⭐</span>
+                  </div>
+                </a>
+              </div>
             </div>
-          </form>
+          </div>
+          <div class="designs">
+            <div class="Men">
+              <h2></h2>
+              <div class="images">
+                <a href="/static/#" class="container">
+                  <img src="/static/images/formal.jpeg" alt="coat" />
+                  <div class="text">
+                    <h2>Formal Shirt</h2>
+                    <span>$150</span><br />
+                    <span>4.7⭐</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div>
-        <div>
-          <button class="grp-cancel">x</button>
+        <!-- my orders table div starts here -->
+        <div class="master" style="display: none">
+          <div>
+            <!--my orders card cancel button div -->
+            <button class="trashButn">X</button>
+          </div>
+          <div class="ord-head">Your Orders</div>
+          <div class="text">
+            <table></table>
+          </div>
         </div>
-        <div>
-          <form action="">
-            <label>Order Name</label><br>
-            <input type="text" name="oname" id="oname" required><br>
-            <label>Gender</label><br>
-            <span>
-              <input type="radio" name="gender" value="Male">
-              <input type="radio" name="gender" value="Female">
-            </span>
-            <label>Dress Count</label><br>
-            
-            <label></label>
-          </form>
+        <!-- End of my orders table div-->
+        <!-- book orders for individual starts here -->
+        <!-- <div class="book" style="display: none">
+          
+          <div class="form-layout">
+            <div class="book-head">
+              <h3>Book your Order</h3>
+              <div>
+                <button class="cancel-btn">x</button>
+              </div>
+            </div>
+
+            <form action="/book" method="post" enctype="multipart/form-data">
+              
+              
+              <div class="formInputs" style="display: none">
+                <label>Dress Type</label>
+                <select>
+                  <option>Shirt</option>
+                  <option>Pant</option>
+                </select>
+              </div>
+
+              
+
+              <div class="formInputs">
+                <label>Material</label><br />
+                <input type="text" id="material" name="material" /><br />
+              </div>
+
+              <div class="formInputs">
+                <label>Model Image</label><br />
+                <input type="file" id="mimg" name="mimg" multiple /><br />
+              </div>
+              <div class="formInputs">
+                <label>Color</label><br />
+                <input type="color" id="color" name="color" /><br />
+              </div>
+              <div class="formInputs">
+                <label>Size</label><br />
+                <select name="size" id="size">
+                  <option value="xs">XS</option>
+                  <option value="s">small</option>
+                  <option value="m">medium</option>
+                  <option value="l">large</option>
+                  <option value="xl">XL</option>
+                  <option value="xxl">XXL</option>
+                  <option value="xxxl">XXXL</option></select
+                ><br />
+              </div>
+              <div class="formInputs">
+                <label>Delivery Date</label><br />
+                <input type="date" id="date" name="date" />
+              </div>
+              <div class="book-btns">
+                <button id="clear-btn" class="book-btn" type="reset">
+                  CLEAR
+                </button>
+                <button id="booking-btn" class="book-btn" type="submit">
+                  BOOK
+                </button>
+              </div>
+            </form>
+          </div>
+        </div> -->
+        <div class="grp-order" style="display: none">
+          <div class="grpord-form">
+            <div class="grpord-head">
+              <h2>Book Your Order</h2>
+              <div>
+                <button class="grp-cancel">x</button>
+              </div>
+            </div>
+            <form action="/grpbook" method="post" enctype="multipart/form-data">
+              <!-- <input type="hidden" name="uid" value="{{uid}}" /> -->
+              <div class="grpforminputs">
+                <label>Order Name</label>
+                <input type="text" name="oname" id="oname" required />
+              </div>
+              <div class="grpforminputs">
+                <label>Material</label>
+                <input type="file" name="file" id="file" required />
+              </div>
+
+              <!-- <div class="grpforminputs">
+                <label>Gender</label>
+                <span>
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="gender"
+                    value="male"
+                  /><label for="Male">Male</label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="gender"
+                    value="female"
+                  /><label for="Female">Female</label>
+                </span>
+              </div> -->
+
+              <div class="grpforminputs" id="male-grp">
+                <label>Dress Type</label>
+                <select name="dtype" id="dtype">
+                  <option value="shirt">Shirt</option>
+                  <option value="pant">Pant</option>
+                </select>
+              </div>
+
+              <!-- <div class="grpforminputs" id="female-grp">
+                <label>Dress Type</label>
+                <select name="dtype" id="dtype">
+                  <option value="chudi">Chudi</option>
+                  <option value="saree">Saree</option>
+                </select>
+              </div> -->
+              <div class="grpforminputs">
+                <label>Image</label>
+                <input type="file" name="file" required />
+              </div>
+              <div class="grpforminputs">
+                <label>Color</label>
+                <input type="color" name="color" required />
+              </div>
+
+              <div class="grpforminputs">
+                <label>Dress Count</label>
+                <input type="number" name="count" id="count" required />
+              </div>
+
+              <div class="grpforminputs grpformtable">
+                <table></table>
+              </div>
+
+              <div class="grpforminputs">
+                <label>Delivery Date</label>
+                <input type="date" id="date" name="date" required />
+              </div>
+
+              <div class="grp-btns">
+                <button type="reset" class="grpbook-btn">CLEAR</button>
+                <button type="submit" class="grpbook-btn">BOOK</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </main>
