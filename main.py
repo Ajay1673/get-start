@@ -85,7 +85,7 @@ def grpbooking():
     print(phone,oname,dtype,color,count,userList,userSize,file.filename)
 
     # return "success all is well"
-    redirect("/static/lhome.html")
+    redirect("/static/lhome.html") 
     file.save(os.path.join("static/public", file.filename))
     con = sqlite3.connect("cdb.db")
     cur = con.cursor()
