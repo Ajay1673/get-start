@@ -24,42 +24,13 @@ document.querySelector(".grp-cancel").addEventListener("click", function () {
   content.style.display = "flex";
 });
 
-// const prd_btn = document.querySelector(".product-btn");
-// const product = document.querySelector(".products");
-// prd_btn.addEventListener("click", function () {
-//   product.style.display = "flex";
-//   content.style.display = "none";
-// });
-
-
-// const uuid = () => document.getElementsByName("uid")[0].value;
-
-/*
-<table>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="#">FeedbackForm</a></td>
-              <td><button type="submit" id="edit-btn">Edit</button>
-              <button type="submit" id="del-btn">Delete</button>
-            </td>
-            </tr>
-          </table>
-
-*/
-
 function showOrders(data) {
   const table = document.querySelector(".text > table");
 
   table.innerHTML = " ";
 
   const heading = document.createElement("tr");
-  ["Material", "Model Image", "Color", "Size", "Requested Time"].forEach(
+  ["Phone","Order Name","Material Image", "Dress Type", "Color","Dress Count","Requested Time"].forEach(
     (title) => {
       const th = document.createElement("th");
       th.append(title);
@@ -68,7 +39,7 @@ function showOrders(data) {
   );
   table.append(heading);
 
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < data[0].length; i++) {
     const tr = document.createElement("tr");
 
     const td1 = document.createElement("td");
@@ -101,12 +72,12 @@ function showOrders(data) {
 
 async function getOrders() {
   try {
-  const req = await fetch(`/getorders`);
-  const data = await req.json();
-  showOrders(data);
-  console.log(data);
+    const req = await fetch(`/getorders`);
+    const data = await req.json();
+    showOrders(data);
+    console.log(data);
   } catch (error) {
-  console.log(error);
+    console.log(error);
   }
 }
 
@@ -132,13 +103,13 @@ document.getElementById("count").addEventListener("input", function () {
     }
     const nameCell = document.createElement("td");
     const nameInput = document.createElement("input");
-    nameInput.setAttribute("name","userList")
+    nameInput.setAttribute("name", "userList");
     nameInput.type = "text";
     nameCell.appendChild(nameInput);
 
     const sizeCell = document.createElement("td");
     const sizeSelect = document.createElement("select");
-    sizeSelect.setAttribute("name","userSize")
+    sizeSelect.setAttribute("name", "userSize");
     for (let j = 0; j < 7; j++) {
       const option = document.createElement("option");
       option.value = opt[j];

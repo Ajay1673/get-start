@@ -93,71 +93,7 @@
             <table></table>
           </div>
         </div>
-        <!-- End of my orders table div-->
-        <!-- book orders for individual starts here -->
-        <!-- <div class="book" style="display: none">
-          
-          <div class="form-layout">
-            <div class="book-head">
-              <h3>Book your Order</h3>
-              <div>
-                <button class="cancel-btn">x</button>
-              </div>
-            </div>
 
-            <form action="/book" method="post" enctype="multipart/form-data">
-              
-              
-              <div class="formInputs" style="display: none">
-                <label>Dress Type</label>
-                <select>
-                  <option>Shirt</option>
-                  <option>Pant</option>
-                </select>
-              </div>
-
-              
-
-              <div class="formInputs">
-                <label>Material</label><br />
-                <input type="text" id="material" name="material" /><br />
-              </div>
-
-              <div class="formInputs">
-                <label>Model Image</label><br />
-                <input type="file" id="mimg" name="mimg" multiple /><br />
-              </div>
-              <div class="formInputs">
-                <label>Color</label><br />
-                <input type="color" id="color" name="color" /><br />
-              </div>
-              <div class="formInputs">
-                <label>Size</label><br />
-                <select name="size" id="size">
-                  <option value="xs">XS</option>
-                  <option value="s">small</option>
-                  <option value="m">medium</option>
-                  <option value="l">large</option>
-                  <option value="xl">XL</option>
-                  <option value="xxl">XXL</option>
-                  <option value="xxxl">XXXL</option></select
-                ><br />
-              </div>
-              <div class="formInputs">
-                <label>Delivery Date</label><br />
-                <input type="date" id="date" name="date" />
-              </div>
-              <div class="book-btns">
-                <button id="clear-btn" class="book-btn" type="reset">
-                  CLEAR
-                </button>
-                <button id="booking-btn" class="book-btn" type="submit">
-                  BOOK
-                </button>
-              </div>
-            </form>
-          </div>
-        </div> -->
         <div class="grp-order" style="display: none">
           <div class="grpord-form">
             <div class="grpord-head">
@@ -166,7 +102,7 @@
                 <button class="grp-cancel">x</button>
               </div>
             </div>
-            <form action="/grpbook" method="post" enctype="multipart/form-data">
+            <form id="bookform" action="/grpbook" method="post" enctype="multipart/form-data">
               <!-- <input type="hidden" name="uid" value="{{uid}}" /> -->
               <div class="grpforminputs">
                 <label>Order Name</label>
@@ -177,43 +113,15 @@
                 <input type="file" name="file" id="file" required />
               </div>
 
-              <!-- <div class="grpforminputs">
-                <label>Gender</label>
-                <span>
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gender"
-                    value="male"
-                  /><label for="Male">Male</label>
-                  <input
-                    type="radio"
-                    name="gender"
-                    id="gender"
-                    value="female"
-                  /><label for="Female">Female</label>
-                </span>
-              </div> -->
 
-              <div class="grpforminputs" id="male-grp">
+              <div class="grpforminputs">
                 <label>Dress Type</label>
                 <select name="dtype" id="dtype">
                   <option value="shirt">Shirt</option>
                   <option value="pant">Pant</option>
                 </select>
               </div>
-
-              <!-- <div class="grpforminputs" id="female-grp">
-                <label>Dress Type</label>
-                <select name="dtype" id="dtype">
-                  <option value="chudi">Chudi</option>
-                  <option value="saree">Saree</option>
-                </select>
-              </div> -->
-              <div class="grpforminputs">
-                <label>Image</label>
-                <input type="file" name="file" required />
-              </div>
+      
               <div class="grpforminputs">
                 <label>Color</label>
                 <input type="color" name="color" required />

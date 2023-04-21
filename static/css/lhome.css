@@ -148,7 +148,7 @@ nav button {
 
 .trashButn{
   padding: 2px 6px;
-  margin: 2px;
+  margin: 5px;
   position: fixed;
   border-radius: 3px;
   border: none;
@@ -318,11 +318,13 @@ td a,a:visited{
 }
 .grp-order{
  width: 100%;
+ /* background-color: aqua; */
 }
 
 .grp-cancel{
   padding: 2px 6px;
-  margin: 2px;
+  position: absolute;
+  margin: 0;
   border-radius: 3px;
   border: none;
   /* justify-content: space-between; */
@@ -332,6 +334,7 @@ td a,a:visited{
 }
 .grpord-form{
   position: relative;
+  padding: 1.5rem;
   top: 10px;
   height: 450px;
   width: 22rem;
@@ -355,7 +358,7 @@ td a,a:visited{
   justify-content: space-between;
   /* background-color: #e9e9e9; */
   /* justify-content: space-between; */
-  padding: .3rem;
+  /* padding: .3rem; */
 }
 .grpord-form >  form{
   width: 100%;

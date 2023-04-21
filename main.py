@@ -27,6 +27,7 @@ def register():
     con.commit()
     con.close()
     return redirect("/clogin.html")
+
 @app.post("/login")
 def login():
     phone  = request.form.get("phone")
@@ -47,43 +48,39 @@ def login():
              message = "wrong credentials try again"
     return message
 
-@app.post("/book")
-def booking():
-    material  = request.form.get("material")
-    color  = request.form.get("color")
-    size  = request.form.get("size")
-    date  = request.form.get("date")
-    file = request.files['mimg']
-
-    file.save(os.path.join("static/public", file.filename))
-    con = sqlite3.connect("cdb.db")
-    cur = con.cursor()
-    cur.execute(f"insert into book values('{material}','{color}','{size}','{date}','static/public/{file.filename}','{session['username']}')")
-    con.commit()
-    con.close()
-    return "success all is well"
 
 @app.get("/getorders")
 def orders():
     con = sqlite3.connect("cdb.db")
     cur = con.cursor()
-    res = cur.execute(f"select * from book where phone='{session['username']}'").fetchall()
+    res = cur.execute(f"select * from bulkbook where phone='{session['username']}'").fetchall()
+
+    res1 = cur.execute(f"select * from bulkorder where phone='{session['username']}'").fetchall()
     con.commit()
     con.close()
-    return json.dumps(res)
+    userData = {
+
+    }
+    index = 0
+    for i in res:
+        userData[index] = {
+            "name":i,
+            "list":res1
+        }
+    print(userData)
+    return json.dumps([*res,res1])
 
 @app.post("/grpbook")
 def grpbooking():
     phone = session['username']
     oname = request.form.get("oname")
-    # gender = request.form.get("gender")
+    file = request.files['file']
     dtype = request.form.get("dtype")
     color = request.form.get("color")
     count = request.form.get("count")
     userList = request.form.getlist("userList")
     userSize = request.form.getlist("userSize")
     date = request.form.get("date")
-    file = request.files['file']
 
     print(phone,oname,dtype,color,count,userList,userSize,file.filename)
 
@@ -92,9 +89,12 @@ def grpbooking():
     file.save(os.path.join("static/public", file.filename))
     con = sqlite3.connect("cdb.db")
     cur = con.cursor()
-    cur.execute(f"insert into book values('{phone}','{oname}','{dtype}','{color}','{count}','{date}','static/public/{file.filename}')")
+    cur.execute(f"insert into bulkbook values('{phone}','{oname}','{file.filename}','{dtype}','{color}','{count}','{date}')")
+    for i,j in zip(userList,userSize):
+        cur.execute(f"insert into bulkorder values('{phone}','{i}','{j}')")
     con.commit()
     con.close()
+    return redirect("/lhome.html")
     
 
 
