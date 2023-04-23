@@ -30,7 +30,7 @@ function showOrders(data) {
   table.innerHTML = " ";
 
   const heading = document.createElement("tr");
-  ["Phone","Order Name","Material Image", "Dress Type", "Color","Dress Count","Requested Time"].forEach(
+  ["Phone","Order Name","Material Image", "Dress Type", "Color","Dress Count","Requested Time","users"].forEach(
     (title) => {
       const th = document.createElement("th");
       th.append(title);
@@ -38,8 +38,9 @@ function showOrders(data) {
     }
   );
   table.append(heading);
-
-  for (let i = 0; i < data[0].length; i++) {
+  console.log("HI")
+  data.forEach(item=>{
+    console.log(item)
     const tr = document.createElement("tr");
 
     const td1 = document.createElement("td");
@@ -47,27 +48,43 @@ function showOrders(data) {
     const td3 = document.createElement("td");
     const td4 = document.createElement("td");
     const td5 = document.createElement("td");
+    const td6 = document.createElement("td");
+    const td7 = document.createElement("td");
+    const td8 = document.createElement("td");
 
-    td1.append(data[i][0]);
+
+    td1.append(item.phone);
     const atag = document.createElement("a");
     atag.append("view/image");
-    atag.setAttribute("href", data[i][4]);
+    atag.setAttribute("href", "/static/public/"+item.image);
     atag.setAttribute("target", "_blank");
     atag.style.backgroundColor = "orange";
     atag.style.padding = "5px";
     atag.style.borderRadius = ".3rem";
     td2.append(atag);
-    td3.append(data[i][1]);
-    td4.append(data[i][2]);
-    td5.append(data[i][3]);
+    td3.append(item.orderName);
+    td4.append(item.dressType);
+    td5.append(item.color);
+    td6.append(item.count);
+    td7.append(item.date);
+    td8.insertAdjacentHTML("afterbegin",item.users.map(data=>{
+        return `<div style="margin: .3rem .5rem">${data[1]} ${data[2]}</div>`
+    }).join(""));
+
 
     tr.append(td1);
     tr.append(td2);
     tr.append(td3);
     tr.append(td4);
     tr.append(td5);
+    tr.append(td6);
+    tr.append(td7);
+    tr.append(td8);
+
     table.append(tr);
-  }
+  })
+
+
 }
 
 async function getOrders() {

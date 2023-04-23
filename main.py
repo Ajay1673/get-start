@@ -4,7 +4,6 @@ import json
 
 import os
 
-
 app = Flask(__name__,static_url_path='/static', static_folder='static',template_folder='static')
 
 app.secret_key = "ajaywasveryhandsome"
@@ -55,20 +54,27 @@ def orders():
     cur = con.cursor()
     res = cur.execute(f"select * from bulkbook where phone='{session['username']}'").fetchall()
 
-    res1 = cur.execute(f"select * from bulkorder where phone='{session['username']}'").fetchall()
+    result = [ ]
+
+    for uid in res:
+        res1 = cur.execute(f"select * from bulkorder where cid={uid[0]}").fetchall()
+        data = {
+            "uid":uid[0],
+            "phone":uid[1],
+            "orderName":uid[2],
+            "image":uid[3],
+            "dressType":uid[4],
+            "color":uid[5],
+            "count":uid[6],
+            "date":uid[7],
+            "users":res1
+        }
+        result.append(data)
+
+
     con.commit()
     con.close()
-    userData = {
-
-    }
-    index = 0
-    for i in res:
-        userData[index] = {
-            "name":i,
-            "list":res1
-        }
-    print(userData)
-    return json.dumps([*res,res1])
+    return result
 
 @app.post("/grpbook")
 def grpbooking():
@@ -85,16 +91,21 @@ def grpbooking():
     print(phone,oname,dtype,color,count,userList,userSize,file.filename)
 
     # return "success all is well"
-    redirect("/static/lhome.html") 
+    # redirect("/static/lhome.html")
     file.save(os.path.join("static/public", file.filename))
     con = sqlite3.connect("cdb.db")
     cur = con.cursor()
-    cur.execute(f"insert into bulkbook values('{phone}','{oname}','{file.filename}','{dtype}','{color}','{count}','{date}')")
-    for i,j in zip(userList,userSize):
-        cur.execute(f"insert into bulkorder values('{phone}','{i}','{j}')")
-    con.commit()
-    con.close()
-    return redirect("/lhome.html")
+    try:
+        cur.execute(f"insert into bulkbook(phone,order_name,material_image,dress_type,color,dress_count,date) values('{phone}','{oname}','{file.filename}','{dtype}','{color}','{count}','{date}')")
+        primaryKey = len(cur.execute("select * from bulkbook").fetchall()) + 1
+        for i,j in zip(userList,userSize):
+            cur.execute(f"insert into bulkorder values('{primaryKey}','{i}','{j}')")
+    except Exception as e:
+        print(e)
+    finally:
+        con.commit()
+        con.close()
+    return redirect("/static/lhome.html")
     
 
 

@@ -160,7 +160,7 @@ nav button {
   position: relative;
   top: 30px;
   width: 100%;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 .text::-webkit-scrollbar{
   width: 5px;
