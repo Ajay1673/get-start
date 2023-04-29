@@ -129,7 +129,7 @@ nav button {
 .master{
   position: relative;
   top:20px;
-  width: 70%;
+  width: 85%;
   height: 350px;
   border: none;
   margin: 0 auto;
@@ -143,6 +143,8 @@ nav button {
   color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   /* scroll-margin-inline-start: initial; */
+  overflow-y: scroll;
+  overflow-x: scroll;
   border-radius: 4px;
 }
 
@@ -152,26 +154,26 @@ nav button {
   position: fixed;
   border-radius: 3px;
   border: none;
-  right:15%;
+  right:7.5%;
   background-color: rgba(225, 6, 6, 0.865);
   color: white;
 }
 .text{
   position: relative;
+  padding: 0.5rem;
   top: 30px;
   width: 100%;
-  /* overflow-y: scroll; */
 }
-.text::-webkit-scrollbar{
+.master::-webkit-scrollbar{
   width: 5px;
 }
 
-.text::-webkit-scrollbar-thumb{
+.master::-webkit-scrollbar-thumb{
   border-radius: 5px;
   background-color: #f9f7f9;
 }
 
-.text::-webkit-scrollbar-track{
+.master::-webkit-scrollbar-track{
   width: 5px;
   border-radius: 5px;
   background-color: #f927893e;

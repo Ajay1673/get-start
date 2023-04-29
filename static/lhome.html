@@ -12,10 +12,10 @@
       <h1>ABC Garments</h1>
       <nav>
         <ul>
-          <li><a href="lhome.html">Home</a></li>
-          <li><a href="index.html">Profile</a></li>
+          <li><a href="/static/lhome.html">Home</a></li>
+          <li><a href="/static/index.html">Profile</a></li>
           <li>
-            <a href="home.html"><button>Log out</button></a>
+            <a href="/static/home.html"><button>Log out</button></a>
           </li>
         </ul>
       </nav>
@@ -121,7 +121,17 @@
                   <option value="pant">Pant</option>
                 </select>
               </div>
-      
+              
+              <div class="grpforminputs">
+                <label>Model Image</label>
+                <input type="file" name="modfile" required />
+              </div>
+
+              <div class="grpforminputs">
+                <label>Description</label>
+                <textarea name="desc" id="desc" cols="20" rows="10"></textarea>
+              </div>
+
               <div class="grpforminputs">
                 <label>Color</label>
                 <input type="color" name="color" required />

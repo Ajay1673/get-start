@@ -23,7 +23,7 @@
     <hr />
     <!-- <div class="nav-border"></div> -->
     <div class="form-layout">
-      <form action="/signup" method="post">
+      <form id="userForm" action="/signup" method="post">
         <div class="heading">
           <h3>SIGN UP</h3>
         </div>
@@ -75,33 +75,6 @@
         </div>
       </form>
     </div>
-    <script type="text/javascript">
-      function success() {
-        $("form").submit(function (event) {
-          const formData = {
-            name: $("#name").val(),
-            model: $("#phone").val(),
-            fault: $("#email").val(),
-            email: $("#password").val(),
-          };
-          $.ajax({
-            type: "POST",
-            url: "/SignUp",
-            data: formData,
-            dataType: "json",
-            encode: true,
-          }).done(function (data1) {
-            if (data1 == "Registered Successfully") {
-              $("#error").text(data1);
-            }
-
-            if (data1 == "Customer Already Exist") {
-              $("#error").text(data1);
-            }
-          });
-          event.preventDefault();
-        });
-      }
-    </script>
+   
   </body>
 </html>

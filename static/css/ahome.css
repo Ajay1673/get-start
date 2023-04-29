@@ -67,6 +67,57 @@
     height: 100%;
     border-radius: 0.5rem;
 }
+
+.order-page{
+   height: 100%;
+   width: 100%;
+   /* background-color: aqua; */
+   display: flex;
+   flex-direction: column;
+   overflow-y: scroll;
+   overflow-x: scroll;
+   /* margin: 0 auto; */
+}
+ 
+.order-page::-webkit-scrollbar{
+   width: 5px;
+}
+ 
+.order-page::-webkit-scrollbar-thumb{
+   border-radius: 5px;
+   background-color: #f9f7f9;
+}
+ 
+.order-page::-webkit-scrollbar-track{
+   width: 5px;
+   border-radius: 5px;
+   background-color: #f927893e;
+}
+
+.order-head h2{
+   font-size: 2rem;
+   text-align: center;
+   padding: 1rem;
+}
+.order-table{
+   width: 90%;
+   height: 70%;
+   /* background-color: aquamarine; */
+}
+.order-table > table{
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   background: transparent;
+   margin: 0 auto;
+}
+ 
+td, th {
+   justify-content: space-evenly;
+   border: 1px solid #e9e9e9;
+   text-align: left;
+   padding: 1rem;
+   font-size: 1.2rem;
+}
 .profile-page{
    height: 100%;
    width: 100%;
@@ -263,8 +314,25 @@
    /* background-color: aqua; */
    display: flex;
    flex-direction: column;
+   overflow-y: scroll;
    /* margin: 0 auto; */
 }
+ 
+.customer-page::-webkit-scrollbar{
+   width: 5px;
+ }
+ 
+ .customer-page::-webkit-scrollbar-thumb{
+   border-radius: 5px;
+   background-color: #f9f7f9;
+ }
+ 
+ .customer-page::-webkit-scrollbar-track{
+   width: 5px;
+   border-radius: 5px;
+   background-color: #f927893e;
+ }
+
 .customer-head h2{
    font-size: 2rem;
    text-align: center;
@@ -272,9 +340,25 @@
 }
 .customer-table{
    width: 100%;
-   height: 80%;
+   height: 70%;
    /* background-color: aquamarine; */
 }
+
+table{
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   background: transparent;
+   margin: 0 auto;
+ }
+ 
+ td, th {
+   justify-content: space-evenly;
+   border: 1px solid #e9e9e9;
+   text-align: left;
+   padding: 1rem;
+   font-size: 1.2rem;
+ }
+
 .material-page{
    display: flex;
    flex-direction: column;
@@ -322,5 +406,14 @@
 }
 h2,h4{
    color: gray;
+}
+
+.status-field{
+   display: flex;
+}
+.status-butn{
+   margin: .5rem;
+   width: 1rem;
+   height: 1rem;
 }
 

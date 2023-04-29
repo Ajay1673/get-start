@@ -30,7 +30,7 @@ function showOrders(data) {
   table.innerHTML = " ";
 
   const heading = document.createElement("tr");
-  ["Phone","Order Name","Material Image", "Dress Type", "Color","Dress Count","Requested Time","users"].forEach(
+  ["Phone","Order Name","Material Image", "Dress Type", "Model Image", "Description", "Color","Dress Count","Requested Time","users","Order Status"].forEach(
     (title) => {
       const th = document.createElement("th");
       th.append(title);
@@ -51,6 +51,11 @@ function showOrders(data) {
     const td6 = document.createElement("td");
     const td7 = document.createElement("td");
     const td8 = document.createElement("td");
+    const td9 = document.createElement("td");
+    const td10 = document.createElement("td");
+    const td11 = document.createElement("td");
+    
+
 
 
     td1.append(item.phone);
@@ -64,12 +69,22 @@ function showOrders(data) {
     td2.append(atag);
     td3.append(item.orderName);
     td4.append(item.dressType);
-    td5.append(item.color);
-    td6.append(item.count);
-    td7.append(item.date);
-    td8.insertAdjacentHTML("afterbegin",item.users.map(data=>{
-        return `<div style="margin: .3rem .5rem">${data[1]} ${data[2]}</div>`
+    const btag = document.createElement("a");
+    btag.append("view/image");
+    btag.setAttribute("href", "/static/public/"+item.modimage);
+    btag.setAttribute("target", "_blank");
+    btag.style.backgroundColor = "orange";
+    btag.style.padding = "5px";
+    btag.style.borderRadius = ".3rem";
+    td5.append(btag);
+    td6.append(item.description);
+    td7.append(item.color);
+    td8.append(item.count);
+    td9.append(item.date);
+    td10.insertAdjacentHTML("afterbegin",item.users.map(data=>{
+        return `<div style="margin: .2rem .3rem; width: 7rem; font-size: 0.8rem;">${data[1]} ${data[2]}</div>`
     }).join(""));
+    td11.append(item.order_status);
 
 
     tr.append(td1);
@@ -80,6 +95,9 @@ function showOrders(data) {
     tr.append(td6);
     tr.append(td7);
     tr.append(td8);
+    tr.append(td9);
+    tr.append(td10);    
+    tr.append(td11);
 
     table.append(tr);
   })
