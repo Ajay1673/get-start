@@ -31,8 +31,8 @@ def register():
               To verify your account, please login through our website"""
     server = smtplib.SMTP("smtp.gmail.com",587)
     server.starttls()
-    server.login("ajayrathnam16703@gmail.com","ympwopoycysovmzk")
-    server.sendmail("ajayrathnam16703+python@gmail.com",email,message)
+    server.login("myemail@gmail.com","mypassword")
+    server.sendmail("ABCgarments.com",email,message)
 
     return redirect("/static/clogin.html")
 
