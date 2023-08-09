@@ -8,7 +8,7 @@
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-image: -webkit-linear-gradient(#ff4c92, purple);  
-   overflow: hidden;
+   /* overflow: hidden; */
  }
  .heading{
     text-align: center;
@@ -66,6 +66,8 @@
     background-color: rgb(249, 249, 249);
     height: 100%;
     border-radius: 0.5rem;
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
 
 .order-page{
@@ -74,21 +76,20 @@
    /* background-color: aqua; */
    display: flex;
    flex-direction: column;
-   overflow-y: scroll;
-   overflow-x: scroll;
+   
    /* margin: 0 auto; */
 }
  
-.order-page::-webkit-scrollbar{
+.content::-webkit-scrollbar{
    width: 5px;
 }
  
-.order-page::-webkit-scrollbar-thumb{
+.content::-webkit-scrollbar-thumb{
    border-radius: 5px;
    background-color: #f9f7f9;
 }
  
-.order-page::-webkit-scrollbar-track{
+.content::-webkit-scrollbar-track{
    width: 5px;
    border-radius: 5px;
    background-color: #f927893e;

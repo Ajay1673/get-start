@@ -38,7 +38,7 @@ function showOrders(data) {
     }
   );
   table.append(heading);
-  console.log("HI")
+  // console.log("HI")
   data.forEach(item=>{
     console.log(item)
     const tr = document.createElement("tr");

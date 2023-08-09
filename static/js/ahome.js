@@ -174,16 +174,16 @@ function showOrders(data) {
 
     const butn1 = document.createElement("input");
     butn1.addEventListener("click",()=>{
-      updateStatus(item.uid,"accept")
+      updateStatus(item.uid,"Completed")
     })
     const butn2 = document.createElement("input");
     butn2.addEventListener("click",()=>{
-      updateStatus(item.uid,"reject")
+      updateStatus(item.uid,"Delayed")
     })
     const label1 = document.createElement("label");
     const label2 = document.createElement("label");
-    label1.append("accept");
-    label2.append("decline");
+    label1.append("Completed");
+    label2.append("Delayed");
     butn1.setAttribute("type", "radio");
     butn2.setAttribute("type", "radio");
     butn1.classList.add("status-butn");
@@ -192,8 +192,8 @@ function showOrders(data) {
     butn1.setAttribute(`name`, `butn-status-name${indexId}`);
     butn2.setAttribute(`name`, `butn-status-name${indexId}`);
 
-    butn1.setAttribute("value", "accept");
-    butn1.setAttribute("value", "decline");
+    butn1.setAttribute("value", "Completed");
+    butn1.setAttribute("value", "Delayed");
 
     t11.append(butn1);
     t11.append(label1);

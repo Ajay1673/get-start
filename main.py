@@ -1,6 +1,6 @@
 from flask import Flask,send_from_directory,request,render_template,redirect,session
 import sqlite3
-import json
+import json,smtplib
 
 import requests as r
 
@@ -27,18 +27,12 @@ def register():
     cur.execute(f"insert into customer values('{phone}','{name}','{email}','{password}','{address}')")
     con.commit()
     con.close()
-
-    user = {
-                "username":"ajaynec37@gmail.com",
-                "password":"tsqwrfuzpwmjrbpa",
-                "emailTo": email,
-                "subject":"verifiy your account",
-                "text":"Ajay web services"
-    }
-    result = r.post("https://nodemailapi.onrender.com/sendgamil",json=user,params={
-        "Content-Type": "application/json"
-    })
-    print(result.text)
+    message = f"""Hi {name}, you have successfully registered your account.
+              To verify your account, please login through our website"""
+    server = smtplib.SMTP("smtp.gmail.com",587)
+    server.starttls()
+    server.login("ajayrathnam16703@gmail.com","ympwopoycysovmzk")
+    server.sendmail("ajayrathnam16703+python@gmail.com",email,message)
 
     return redirect("/static/clogin.html")
 
@@ -157,7 +151,7 @@ def grpbooking():
     con = sqlite3.connect("cdb.db")
     cur = con.cursor()
     try:
-        cur.execute(f"insert into bulkbook(phone,order_name,material_image,dress_type,model_image,description,color,dress_count,date,order_status) values('{phone}','{oname}','{file.filename}','{dtype}','{modfile.filename}','{desc}','{color}','{count}','{date}','pending')")
+        cur.execute(f"insert into bulkbook(phone,order_name,material_image,dress_type,model_image,description,color,dress_count,date,order_status) values('{phone}','{oname}','{file.filename}','{dtype}','{modfile.filename}','{desc}','{color}','{count}','{date}','Pending')")
         primaryKey = len(cur.execute("select * from bulkbook").fetchall()) + 1
         for i,j in zip(userList,userSize):
             cur.execute(f"insert into bulkorder values('{primaryKey}','{i}','{j}')")
